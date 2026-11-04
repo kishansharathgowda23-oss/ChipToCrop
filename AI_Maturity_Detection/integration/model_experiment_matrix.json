@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "classifier_benchmark_models": [
+    "mobilenet_v3_large",
+    "efficientnet_b0",
+    "resnet50",
+    "densenet121",
+    "convnext_tiny"
+  ],
+  "experiments": [
+    {
+      "dataset_id": "fruits360",
+      "task": "fruit_identity",
+      "models": ["mobilenet_v3_large", "efficientnet_b0", "resnet50", "densenet121", "convnext_tiny"]
+    },
+    {
+      "dataset_id": "fresh_stale",
+      "task": "freshness",
+      "models": ["mobilenet_v3_large", "efficientnet_b0", "resnet50", "densenet121", "convnext_tiny"]
+    },
+    {
+      "dataset_id": "rawripe",
+      "task": "raw_ripe",
+      "models": ["mobilenet_v3_large", "efficientnet_b0", "resnet50", "densenet121", "convnext_tiny"],
+      "split_note": "Use a reviewed crop-specific manifest so fruit species do not leak across splits or obscure the raw/ripe label."
+    },
+    {
+      "dataset_id": "alphonso_mango",
+      "task": "maturity",
+      "models": ["mobilenet_v3_large", "efficientnet_b0", "resnet50", "densenet121", "convnext_tiny"],
+      "label_note": "Use the dataset's three source stages: unripe, partially ripe, ripe."
+    },
+    {
+      "dataset_id": "smartharvest",
+      "task": "detection_and_optional_segmentation",
+      "models": ["yolov8n", "unet", "deeplabv3"],
+      "gate": "Inspect current annotations and create grouped image/mask or YOLO manifests first."
+    },
+    {
+      "dataset_id": "strawberry_avocado",
+      "task": "object_detection",
+      "models": ["yolov8n"],
+      "gate": "Inspect the downloaded Parquet annotation schema and create group-safe YOLO splits first."
+    }
+  ],
+  "deferred_structured_models": ["logistic_regression", "random_forest", "xgboost", "lightgbm"],
+  "deferred_longitudinal_models": ["gru", "lstm"],
+  "deferred_reason": "These need reviewed structured outcomes or repeated dated observations from the backend after its developer pushes."
+}
