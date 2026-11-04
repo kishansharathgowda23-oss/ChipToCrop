@@ -1,0 +1,144 @@
+{
+    "inspection_id": "8c91b80a-7704-441c-a6af-cbee8e55c97f",
+    "fruit_type": "mango",
+    "method": "majority_vote_and_average_scores",
+    "majority_prediction": "ripe",
+    "average_score_prediction": "ripe",
+    "final_maturity_stage": "ripe",
+    "average_class_scores": {
+        "partially_ripe": 0.183542,
+        "ripe": 0.43119,
+        "unripe": 0.385268
+    },
+    "average_model_score": 0.4312,
+    "view_agreement": 1.0,
+    "prediction_methods_agree": true,
+    "view_counts": {
+        "partially_ripe": 0,
+        "ripe": 6,
+        "unripe": 0
+    },
+    "status": "MANUAL_REVIEW_REQUIRED",
+    "review_reasons": [
+        "LOW_MODEL_SCORE"
+    ],
+    "model_version": "2.0",
+    "confidence_note": "Model scores are not calibrated probabilities. The confidence threshold is preliminary and requires validation on independent labelled field images.",
+    "views": [
+        {
+            "maturity_stage": "ripe",
+            "scores": {
+                "partially_ripe": 0.18385,
+                "ripe": 0.430597,
+                "unripe": 0.385553
+            },
+            "model_score": 0.430597,
+            "view": "front",
+            "image_quality": {
+                "width": 6000,
+                "height": 4000,
+                "sharpness": 26.55,
+                "brightness": 198.68,
+                "quality_passed": true,
+                "issues": []
+            },
+            "status": "PREDICTION_AVAILABLE"
+        },
+        {
+            "maturity_stage": "ripe",
+            "scores": {
+                "partially_ripe": 0.183017,
+                "ripe": 0.433142,
+                "unripe": 0.383841
+            },
+            "model_score": 0.433142,
+            "view": "back",
+            "image_quality": {
+                "width": 759,
+                "height": 1024,
+                "sharpness": 43.36,
+                "brightness": 182.05,
+                "quality_passed": true,
+                "issues": []
+            },
+            "status": "PREDICTION_AVAILABLE"
+        },
+        {
+            "maturity_stage": "ripe",
+            "scores": {
+                "partially_ripe": 0.184027,
+                "ripe": 0.430392,
+                "unripe": 0.385581
+            },
+            "model_score": 0.430392,
+            "view": "left",
+            "image_quality": {
+                "width": 6000,
+                "height": 4000,
+                "sharpness": 43.3,
+                "brightness": 164.49,
+                "quality_passed": true,
+                "issues": []
+            },
+            "status": "PREDICTION_AVAILABLE"
+        },
+        {
+            "maturity_stage": "ripe",
+            "scores": {
+                "partially_ripe": 0.184196,
+                "ripe": 0.430569,
+                "unripe": 0.385235
+            },
+            "model_score": 0.430569,
+            "view": "right",
+            "image_quality": {
+                "width": 6000,
+                "height": 4000,
+                "sharpness": 52.95,
+                "brightness": 166.05,
+                "quality_passed": true,
+                "issues": []
+            },
+            "status": "PREDICTION_AVAILABLE"
+        },
+        {
+            "maturity_stage": "ripe",
+            "scores": {
+                "partially_ripe": 0.183207,
+                "ripe": 0.432456,
+                "unripe": 0.384336
+            },
+            "model_score": 0.432456,
+            "view": "top",
+            "image_quality": {
+                "width": 762,
+                "height": 1024,
+                "sharpness": 68.67,
+                "brightness": 180.7,
+                "quality_passed": true,
+                "issues": []
+            },
+            "status": "PREDICTION_AVAILABLE"
+        },
+        {
+            "maturity_stage": "ripe",
+            "scores": {
+                "partially_ripe": 0.182953,
+                "ripe": 0.429986,
+                "unripe": 0.38706
+            },
+            "model_score": 0.429986,
+            "view": "bottom",
+            "image_quality": {
+                "width": 1536,
+                "height": 1024,
+                "sharpness": 46.57,
+                "brightness": 198.36,
+                "quality_passed": true,
+                "issues": []
+            },
+            "status": "PREDICTION_AVAILABLE"
+        }
+    ],
+    "timestamp": "2026-11-04T12:20:02.191648+00:00"
+}
