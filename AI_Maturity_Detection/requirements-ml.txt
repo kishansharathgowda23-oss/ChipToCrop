@@ -1,0 +1,4 @@
+# Select a PyTorch build matching the machine's OS and GPU from pytorch.org/get-started/locally.
+torch>=2.10
+torchvision>=0.25
+Pillow>=10.0

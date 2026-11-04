@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://farmaura.invalid/schemas/model-response-1.0.0.json",
+  "title": "FARMAURA AI/ML model response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "fruit_type",
+    "variety",
+    "fruit_confidence",
+    "maturity_label",
+    "freshness_label",
+    "raw_ripe_label",
+    "confidence",
+    "task",
+    "model_name",
+    "model_version",
+    "image_quality",
+    "advisory",
+    "limitations",
+    "views_analyzed",
+    "views_rejected",
+    "quality_details"
+  ],
+  "properties": {
+    "fruit_type": {"type": ["string", "null"]},
+    "variety": {"type": ["string", "null"]},
+    "fruit_confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+    "maturity_label": {"type": ["string", "null"]},
+    "freshness_label": {"type": ["string", "null"]},
+    "raw_ripe_label": {"type": ["string", "null"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "task": {
+      "enum": [
+        "fruit_maturity_inspection",
+        "fruit_identity",
+        "maturity",
+        "raw_ripe",
+        "freshness",
+        "object_detection",
+        "segmentation"
+      ]
+    },
+    "model_name": {"type": "string", "minLength": 1},
+    "model_version": {"type": "string", "minLength": 1},
+    "image_quality": {"enum": ["acceptable", "mixed", "retake", "not_evaluated"]},
+    "advisory": {"enum": ["retake_image", "expert_check", "monitor_or_harvest_review"]},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "views_analyzed": {"type": "integer", "minimum": 0},
+    "views_rejected": {"type": "integer", "minimum": 0},
+    "quality_details": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["image", "flags", "usable", "method"],
+        "properties": {
+          "image": {"type": "string"},
+          "width": {"type": "integer", "minimum": 0},
+          "height": {"type": "integer", "minimum": 0},
+          "brightness_mean_0_255": {"type": "number"},
+          "sharpness_laplacian_variance": {"type": "number"},
+          "flags": {"type": "array", "items": {"type": "string"}},
+          "usable": {"type": "boolean"},
+          "method": {"type": "string"}
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

@@ -86,4 +86,8 @@ def dataset_summary() -> list[dict[str, str | bool]]:
             "source_url": item.source_url,
         }
         for item in DATASETS
+<<<<<<< HEAD
     ]
+=======
+    ]
+>>>>>>> b153f1e (Add FARMAURA AI maturity module)

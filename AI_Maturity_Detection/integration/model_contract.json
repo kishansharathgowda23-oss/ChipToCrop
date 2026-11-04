@@ -1,0 +1,37 @@
+{
+  "contract_version": "1.0.0",
+  "owner": "FARMAURA AI/ML",
+  "integration_stage": "after backend developer pushes the backend repository",
+  "response_schema": "model_response.schema.json",
+  "request": {
+    "content_type": "multipart/form-data",
+    "field": "image",
+    "optional_fields": ["model_task", "frames[]"]
+  },
+  "response": {
+    "fruit_type": "string|null",
+    "variety": "string|null",
+    "fruit_confidence": "number|null, 0..1",
+    "maturity_label": "string|null",
+    "freshness_label": "string|null",
+    "raw_ripe_label": "string|null",
+    "confidence": "number 0..1",
+    "task": "fruit_maturity_inspection|fruit_identity|maturity|raw_ripe|freshness|object_detection|segmentation",
+    "model_name": "string",
+    "model_version": "string",
+    "image_quality": "string",
+    "advisory": "string",
+    "limitations": "string[]",
+    "views_analyzed": "integer",
+    "views_rejected": "integer",
+    "quality_details": "per-frame image quality metrics and flags"
+  },
+  "rules": [
+    "freshness_label is separate from maturity_label",
+    "raw_ripe_label preserves the RawRipe source labels",
+    "fruit identity confidence is separate from maturity confidence",
+    "fruit identity is not a ripeness prediction",
+    "multi-view consensus only combines frames from one inspection; it is not growth history",
+    "detection and segmentation require task-specific output schemas"
+  ]
+}
